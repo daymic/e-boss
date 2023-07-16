@@ -19,7 +19,10 @@ SET time_zone = "+00:00";
 
 --
 -- Database: `eboss`
---
+
+DROP DATABASE IF EXISTS eboss;
+CREATE DATABASE eboss;  
+USE eboss;
 
 -- --------------------------------------------------------
 
