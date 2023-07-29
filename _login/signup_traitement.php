@@ -10,7 +10,7 @@
         $statut = htmlspecialchars($_POST['statut']);
 
 
-        $sql = $pdo->prepare('INSERT INTO utilisateurs (nom,prenoms,email,mdp,statut)
+        $sql = $bdd->prepare('INSERT INTO utilisateurs (nom,prenoms,email,mdp,statut)
                 VALUES(?,?,?,?,?)');
         if ($sql === false){
             die("Erreur de préparation de la réquête:" .$con->error);
