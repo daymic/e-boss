@@ -1,12 +1,14 @@
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $mdp = "";
-    $db_name = "eboss";
+$servername = "localhost";
+$username = "root";
+$mdp = "";
+$db_name = "eboss";
 
-    $con = mysqli_connect($servername,$username,$mdp,$db_name);
-
-    if (!$con){
-        echo "connexion echoué".mysqli_error($con);
-    }
+try {
+    $pdo = new PDO("mysql:host=$servername;dbname=$db_name;charset=utf8", $username, $mdp);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Erreur de connexion : " . $e->getMessage());
+}
 ?>
+

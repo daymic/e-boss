@@ -16,10 +16,10 @@
         <input type="text" id="nom" name="nom" placeholder="entrer votre nom." required><br><br>
         <label for="prenom">Prénom : </label>
         <input type="text" id="prenom" name="prenom" placeholder="entrer votre prénom." ><br><br>
-        <label for="role">Rôle* :</label><br>
-        <input type="radio" id="enseignant" name="role" value="Ensignant">
+        <label for="statut">Statut* :</label><br>
+        <input type="radio" id="enseignant" name="statut" value="ensignants">
         <label for="enseignant"> Enseignant</label><br>
-        <input type="radio" id="etudiant" name="role" value="etudiant">
+        <input type="radio" id="etudiant" name="statut" value="etudiants">
         <label for="etudiant">Etudiant(e)</label><br><br>
         <label for="email">E-mail* : </label>
         <input type="email" id="email" name="email" placeholder="entrer votre mail." required><br><br>

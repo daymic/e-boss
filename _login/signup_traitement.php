@@ -6,30 +6,23 @@
         $nom = htmlspecialchars($_POST['nom']);
         $prenom = htmlspecialchars($_POST['prenom']);
         $email = htmlspecialchars($_POST['email']);
-        $pass = htmlspecialchars($_POST['pass']);
-        $role = htmlspecialchars($_POST['role']);
+        $pass = sha1($_POST['pass']);
+        $statut = htmlspecialchars($_POST['statut']);
 
 
-        $sql = $con->prepare('INSERT INTO utilisateurs (nom,prenoms,email,mdp,role)
-                VALUES(:nom,:prenoms,:email,:mdp,:role)');
+        $sql = $pdo->prepare('INSERT INTO utilisateurs (nom,prenoms,email,mdp,statut)
+                VALUES(?,?,?,?,?)');
         if ($sql === false){
             die("Erreur de préparation de la réquête:" .$con->error);
+        }else{
+            $sql->execute(array($nom,$prenom,$email,$pass,$statut));
+            echo "il a été bien ajouté.";
         }
+            
 
-        $sql->bind_param("sssss",$nom,$prenom,$email,$pass,$role);
+    
 
-        $sql->execute();
-        /*$sql->execute(array(
-            'nom' => $nom,
-            'prenoms' => $prenom,
-            'email' => $email,
-            'mdp' => $pass,
-            'role' => $role
-        ));
-        */
-    echo "il a été bien ajouté.";
-
-    mysqli_close($con);
+    $pdo = null;
 
     }
 ?>
