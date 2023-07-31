@@ -11,7 +11,8 @@
     <?php 
         require_once('../_menu/nav_1.html');
     ?>
-	<form method="POST" action="signup_traitement.php">
+    <div align = "center">
+    <form method="POST" action="signup_traitement.php">
         <label for="nom">Nom* : </label>
         <input type="text" id="nom" name="nom" placeholder="entrer votre nom." required><br><br>
         <label for="prenom">Prénom : </label>
@@ -27,8 +28,7 @@
         <input type="password" id="pass" name="pass" placeholder="entrer votre mot de passe." required><br><br>
         <input type="submit" value="m'inscrire" name="OK">
     </form>
-
-
+    </div>
     <script src="../_js/bootstrap.bundle.min.js"></script>
     <script src="../_js/formscript_1"></script>
 </body>
