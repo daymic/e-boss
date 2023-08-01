@@ -17,6 +17,7 @@
         }else{
             $sql->execute(array($nom,$prenom,$email,$pass,$statut));
             echo "il a été bien ajouté.";
+            header ("location : ../index.php");
         }
             
 

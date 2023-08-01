@@ -11,6 +11,11 @@
         require_once('_menu/nav_1.html');
     ?>
 
+    <div align = "center">
+        <h1>"La curiosité est le carburant de la connaissance, et les études sont le voyage passionnant 
+            vers un horizon infini de découvertes et d'épanouissement personnel. Avec e-boss tout est possible."</h1>
+    </div>
+
 
     <script src="_js/bootstrap.bundle.min.js"></script>
 </body>
