@@ -2,7 +2,7 @@
 <?php
 session_start();
 
-include('connect_db.php');
+include('../connect_db.php');
 
 if(isset($_GET['id']) AND ($_GET['id'] > 0)) {
    $getid = intval($_GET['id']);
@@ -32,30 +32,17 @@ if(isset($_GET['id']) AND ($_GET['id'] > 0)) {
 </head>
 <body>
 <div align="center">
-         <h2>Bonjour et bienvenu cher professeur!
+         <h2>Voici votre cours!</h2>
          <br><br>
-         <h3> Nom : <?php echo $userinfo['nom']; ?>
+         <h3> Titre : <?php echo $usercours['titre']; ?>
          <br /></h3>
-         <h3> Prenom : <?php echo $userinfo['prenoms']; ?>
-         <br /></h3>
-         <h3> Statut : <?php echo $userinfo['statut']; ?>
-         <br /></h3>
-         <h3> Prof : <?php echo $usercours['titre']; ?>
-         <br /></h3>
+         <br><br>
          <h3> Description : <?php echo $usercours['description']; ?>
          <br /></h3>
          <br />
          <br />
-         <?php
-         if(isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id']) {
-         
-         }
-         ?>
-         <br />
-         <button><a href="dashboard2.php?id=<?= $getid ?>" >Acceuil</a></button>
-         <button><a href="_cours/coursprof.php?id=<?= $getid ?>">Mes cours</a></button>
-         <button><a href="#">changer mes propos</a></button>
-         <button><a href="_login/logout.php">Se déconnecter</a></button>
+         <button><a href="../_crud/edit.php?id=<?= $getid ?>" >Editer</a></button>
+         <button><a href="../_crud/delete.php?id=<?= $getid ?>">Supprimer</a></button>
       </div>
     <script src="_js/bootstrap.bundle.min.js"></script>
 </body>
