@@ -33,7 +33,7 @@ if(isset($_GET['id']) AND ($_GET['id'] > 0)) {
             <label>Description</label>
             <input type="text" name="description" value = "<?php echo $_SESSION['description']; ?>"><br><br>
 
-            <button  type="submit" name="modifier">Modifier</button>
+            <button  type="submit" name="OK">Modifier</button>
 
     </form>
 </body>
